@@ -1,13 +1,14 @@
 {
   "name": "mi-portfolio",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://15025v.github.io/Victor.dev",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build ",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d out"
    
     
   },
