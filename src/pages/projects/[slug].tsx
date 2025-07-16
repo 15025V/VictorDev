@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 export default function ProjectPage() {
 
-   const basePath = process.env.NODE_ENV === 'production' ? '/Victor.dev/' : '';
+   const basePath = process.env.NODE_ENV === 'production' ? '/Victor.dev' : '';
 
   const { slug } = useRouter().query;
   const project = projects.find((p) => p.slug === slug);
