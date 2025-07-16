@@ -9,8 +9,6 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "gh-pages -d out"
-   
-    
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

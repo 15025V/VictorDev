@@ -7,9 +7,9 @@ import Link from 'next/link';
 
 
 export default function PortfolioMagazineStyle() {
-  const handleClick = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
+  // const handleClick = (url: string) => {
+  //   window.open(url, '_blank', 'noopener,noreferrer');
+  // };
 
   const basePath = process.env.NODE_ENV === 'production' ? '/VictorDev' : '';
 
