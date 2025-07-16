@@ -6,7 +6,7 @@ import VerticalLabel from './VerticalLabel';
 
 
 export default function Hero() {
-  const basePath = process.env.NODE_ENV === 'production' ? '/Victor.dev' : '';
+  const basePath = process.env.NODE_ENV === 'production' ? '/VictorDev' : '';
   return (
     <motion.section
       initial={{ opacity: 0 }}
