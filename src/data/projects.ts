@@ -12,8 +12,8 @@ export const projects = [
     mockups: [
       "/images/home.jpeg",
       "/images/h2.jpeg",
-      "/images/mockups/h3.jpeg",
-      "/images/mockups/h1.jpeg"
+      "/images/h3.jpeg",
+      "/images/h1.jpeg"
     ],
   },
   {
@@ -25,7 +25,7 @@ export const projects = [
     link: "https://www.candypostres.com.mx/",
     image: "/images/default.png", // Si aún no tienes la imagen, usa /images/default.png
     mockups: [ 
-      "/images/mockups/default.png"
+      "/images/default.png"
     ],
   },
   // {
@@ -47,6 +47,6 @@ export const projects = [
     tags: ["Next.js", "GSAP", "Tailwind CSS"],
     link: "https://www.axiondigital.com/",
     image: "/images/default.png",
-    mockups:[ "/images/mockups/default.png"],
+    mockups:[ "/images/default.png"],
   },
 ];
