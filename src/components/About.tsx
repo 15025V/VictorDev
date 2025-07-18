@@ -6,15 +6,17 @@ export default function AboutSectionClassic() {
   return (
     <section
       id="about"
-      className="relative py-32 px-6 sm:px-10 lg:px-24  text-white overflow-hidden"
-      // bg-[#0b0b0c]
+      aria-labelledby="about-title"
+      role="region"
+      className="relative py-32 px-6 sm:px-10 lg:px-24 text-white overflow-hidden"
     >
       {/* Fondo decorativo sutil tipo luz */}
       <div className="absolute inset-0 -z-10 bg-gradient-radial from-blue-900/20 via-transparent to-black" />
-  
+
       <div className="max-w-4xl mx-auto">
         {/* Título */}
         <motion.h2
+          id="about-title"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -29,6 +31,7 @@ export default function AboutSectionClassic() {
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.5 }}
           className="h-1 w-24 bg-gradient-to-r from-blue-500 via-cyan-400 to-transparent mb-12 origin-left"
+          aria-hidden="true"
         />
 
         {/* Cuerpo del texto */}
@@ -37,7 +40,7 @@ export default function AboutSectionClassic() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="space-y-8 text-gray-300 text-lg leading-relaxed "
+          className="space-y-8 text-gray-200 text-lg leading-relaxed"
         >
           <p>
             Soy un desarrollador frontend enfocado en construir interfaces que se sientan <span className="text-white font-semibold">elegantes, rápidas</span> y cargadas de intención. Me especializo en <span className="text-blue-400 font-semibold">React</span>, <span className="text-blue-400 font-semibold">Next.js</span> y <span className="text-blue-400 font-semibold">Tailwind CSS</span>, con un enfoque muy marcado hacia la experiencia visual.
@@ -58,7 +61,8 @@ export default function AboutSectionClassic() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
           viewport={{ once: true }}
-          className="mt-16 text-sm text-right italic tracking-wide text-gray-500"
+          className="mt-16 text-sm text-right italic tracking-wide text-gray-400"
+          aria-label="Firma de la sección sobre mí"
         >
           — Con visión, diseño y propósito,&nbsp;
           <span className="text-blue-400 font-semibold not-italic">Victor</span>
