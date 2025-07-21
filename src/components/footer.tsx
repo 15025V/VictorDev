@@ -58,10 +58,10 @@ export default function Footer() {
       <div className="mt-10 h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
 
       {/* Créditos */}
-      <p className="text-center text-sm mt-6 text-gray-500 tracking-wider">
+      {/* <p className="text-center text-sm mt-6 text-gray-500 tracking-wider">
         © {new Date().getFullYear()}{' '}
         <span className="text-white font-semibold">VICTOR.dev</span> — Todos los derechos reservados.
-      </p>
+      </p> */}
     </motion.footer>
   );
 }

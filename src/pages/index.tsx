@@ -27,7 +27,7 @@ export default function Home() {
       <ContactCTA />
       
       <FloatingContactButton />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
