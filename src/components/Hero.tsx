@@ -1,101 +1,92 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
-import VerticalLabel from './VerticalLabel';
-import Head from 'next/head';
+import { motion, Variants } from 'framer-motion';
+import { FaCode, FaEnvelopeOpenText, FaFileDownload } from 'react-icons/fa';
+import VerticalLabel from '@/components/VerticalLabel'; // Ajusta la ruta si es necesario
+
+const basePath: string = process.env.NODE_ENV === 'production' ? '/VictorDev' : '';
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
 
 export default function Hero() {
-  const basePath = process.env.NODE_ENV === 'production' ? '/VictorDev' : '';
-
   return (
-    <>
-      <Head>
-        <title>Victor | Desarrollador Frontend</title>
-        <meta
-          name="description"
-          content="Portafolio de Victor, desarrollador frontend especializado en React, Next.js y diseño digital."
-        />
-      </Head>
+    <motion.header
+      initial="hidden"
+      animate="show"
+      variants={containerVariants}
+      role="banner"
+      aria-label="Hero cinemático"
+      className="relative min-h-screen flex items-center justify-center px-6 text-white overflow-hidden bg-slate-950"
+    >
+      {/* Fondo animado tipo neblina */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-cyan-900 via-slate-900 to-black opacity-10 animate-pulse-slow" />
+      <div className="absolute inset-0 z-10 [mask-image:radial-gradient(transparent,black)]" />
 
-      <motion.header
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        role="banner"
-        aria-label="Sección de presentación"
-        className="min-h-screen flex items-center justify-center px-6 relative z-10 bg-[#0c0c0c] bg-[radial-gradient(ellipse_at_center,_rgba(59,130,246,0.1),_transparent)]"
-      >
-        <div className="text-center max-w-5xl" tabIndex={-1}>
-          <VerticalLabel />
+      <VerticalLabel />
 
-          {/* Título principal */}
-          <motion.h1
-            initial={{ y: -80, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-5xl sm:text-6xl md:text-8xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-sky-500 text-transparent bg-clip-text drop-shadow-[0_5px_15px_rgba(59,130,246,0.4)]"
+      {/* Contenido principal */}
+      <motion.div variants={containerVariants} className="relative z-20 text-center max-w-4xl">
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-white"
+        >
+          Víctor González Espinoza
+        </motion.h1>
+
+        <motion.p
+          variants={itemVariants}
+          className="text-xl md:text-2xl text-slate-300 font-light mb-6"
+        >
+          Frontend Engineer que diseña con intención y escala con lógica.
+        </motion.p>
+
+        <motion.p
+          variants={itemVariants}
+          className="text-sm md:text-base text-cyan-400 font-mono mb-8"
+        >
+          
+        </motion.p>
+
+        <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4">
+          <a
+            href="#projects"
+            aria-label="Ver proyectos"
+            className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-gray-900 px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:scale-105"
           >
-            Hola, soy <span className="text-white animate-pulse">Victor</span>
-          </motion.h1>
-
-          {/* Typing dinámico */}
-          <TypeAnimation
-            sequence={[
-              'Desarrollador Frontend', 2000,
-              'Especialista en React + Next.js', 2000,
-              'Diseñador de experiencias digitales', 2000,
-            ]}
-            speed={60}
-            repeat={Infinity}
-            aria-label="Animación de texto con roles profesionales"
-            className="text-xl sm:text-2xl text-slate-200 mb-6 tracking-widest uppercase"
-          />
-
-          {/* Subtítulo emocional */}
-          <p className="text-slate-300 text-base sm:text-lg italic max-w-2xl mx-auto mb-10">
-            Me apasiona transformar ideas en interfaces funcionales y memorables. Diseño para emocionar, desarrollo para escalar.
-          </p>
-
-          {/* Botones principales */}
-          <nav aria-label="Acciones principales">
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href="#projects"
-                className="bg-blue-600/90 hover:bg-blue-500 text-white px-8 py-3 rounded-full text-lg font-semibold tracking-wide shadow-[0_4px_15px_rgba(59,130,246,0.3)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                aria-label="Ir a proyectos"
-              >
-                Ver proyectos
-              </a>
-              <a
-                href="#contact"
-                className="bg-white/10 backdrop-blur-sm border border-blue-400 text-blue-200 px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-400/10 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                aria-label="Ir a contacto"
-              >
-                Contáctame
-              </a>
-              <a
-                href={`${basePath}/CV_Victor.pdf`}
-                download
-                className="bg-gradient-to-r from-gray-700 to-gray-900 text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-gray-600 hover:to-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
-                aria-label="Descargar CV de Victor"
-              >
-                Descargar CV
-              </a>
-            </div>
-          </nav>
-
-          {/* Indicador de scroll */}
-          <div
-            className="mt-14 flex justify-center animate-bounce text-gray-500 text-xs tracking-wide"
-            aria-hidden="true"
+            <FaCode /> Ver proyectos
+          </a>
+          <a
+            href="#contact"
+            aria-label="Contáctame"
+            className="flex items-center gap-2 border border-cyan-500 text-cyan-500 px-6 py-3 rounded-full font-semibold hover:bg-cyan-500/10 hover:text-white transition-all duration-300"
           >
-            <span className="border border-gray-600 px-3 py-1 rounded-full">
-              ↓ Desliza para explorar ↓
-            </span>
-          </div>
-        </div>
-      </motion.header>
-    </>
+            <FaEnvelopeOpenText /> Contáctame
+          </a>
+          <a
+            href={`${basePath}/cv_VictorGonzalezEspinoza.pdf`}
+            download
+            aria-label="Descargar CV"
+            className="flex items-center gap-2 text-slate-400 px-4 py-2 font-light hover:text-white transition-all duration-300"
+          >
+            <FaFileDownload /> Descargar CV
+          </a>
+        </motion.div>
+      </motion.div>
+    </motion.header>
   );
 }

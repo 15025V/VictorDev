@@ -1,32 +1,27 @@
+import AboutSection from "@/components/About";
+import Footer from "@/components/footer";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import Particles from "@/components/Particles";
+import PortfolioGrid from "@/components/PortfolioGrid";
 
 
-import Hero from '@/components/Hero';
-import Particles from '@/components/Particles';
-import Navbar from '@/components/Navbar';
-import PortfolioGrid from '@/components/PortfolioGrid';
 
-import Footer from '@/components/footer';
-import ContactCTA from '@/components/ContactCTA';
-import FloatingContactButton from '@/components/FloatingContactButton';
-import AboutSection from '@/components/About';
+
 
 
 
 export default function Home() {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
-      <Particles />
+     
       <Navbar />
-      <Hero />
+      <Hero/>
       <AboutSection />
       <PortfolioGrid />
-     
-
-   
-
-      <ContactCTA />
-      
-      <FloatingContactButton />
+      <Particles />
+      {/* <ContactCTA /> */}
+      {/* <FloatingContactButton /> */}
       <Footer />
     </div>
   );
