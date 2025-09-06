@@ -1,21 +1,46 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { projects } from '@/data/projects';
 import Link from 'next/link';
 
 export default function PortfolioGrid() {
   const basePath = process.env.NODE_ENV === 'production' ? '/VictorDev' : '';
 
+  // Variantes generales para la sección
+  const containerVariants: Variants = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.2 } },
+  };
+
+  // Variantes para cada proyecto
+  const projectVariants: Variants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: 'easeOut' } },
+  };
+
+  // Variantes para imagen
+  const imageVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.9, rotate: -2 },
+    show: { opacity: 1, scale: 1, rotate: 0, transition: { duration: 0.8 } },
+    hover: { scale: 1.1, rotate: 1, transition: { type: 'spring', stiffness: 200 } },
+  };
+
+  // Variantes para texto
+  const textVariants: Variants = {
+    hidden: { opacity: 0, x: -20 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+  };
+
   return (
     <motion.section
       id="projects"
       aria-labelledby="projects-title"
       role="region"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+      initial="hidden"
+      whileInView="show"
+      variants={containerVariants}
       viewport={{ once: true }}
       className="relative py-28 px-6 sm:px-10 lg:px-32 text-white overflow-hidden bg-slate-950"
     >
@@ -26,30 +51,29 @@ export default function PortfolioGrid() {
       {/* Título */}
       <motion.h2
         id="projects-title"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        variants={{ hidden: { opacity: 0, y: -20 }, show: { opacity: 1, y: 0, transition: { duration: 0.8 } } }}
         className="text-4xl sm:text-5xl font-extrabold text-center mb-20 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white"
       >
         Proyectos
       </motion.h2>
 
       {/* Lista de proyectos */}
-      <div className="flex flex-col gap-24" role="list">
+      <motion.div className="flex flex-col gap-24">
         {projects.map((project, index) => (
           <motion.div
             key={`${project.title}-${index}`}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
-            viewport={{ once: true, amount: 0.2 }}
-            role="listitem"
-            className={`flex flex-col md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''
-              } items-center gap-8 md:gap-16`}
+            variants={projectVariants}
+            className={`flex flex-col md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} items-center gap-8 md:gap-16`}
           >
             {/* Imagen del proyecto */}
-            <div className="group relative w-full md:w-1/2 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:scale-[1.01] ">
+            <motion.div
+              variants={imageVariants}
+              initial="hidden"
+              whileInView="show"
+              whileHover="hover"
+              viewport={{ once: true, amount: 0.3 }}
+              className="group relative w-full md:w-1/2 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500"
+            >
               <div className="relative w-full h-110 sm:h-96 md:h-[48rem]">
                 <Image
                   src={`${basePath}${project.image}`}
@@ -58,20 +82,37 @@ export default function PortfolioGrid() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   priority={index < 2}
                 />
-                
               </div>
-            </div>
+            </motion.div>
 
             {/* Contenido del proyecto */}
-            <div className="w-full md:w-1/2  space-y-4 text-left">
-              <h3 className="text-3xl ml-6 sm:text-4xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400">
+            <motion.div
+              variants={textVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              className="w-full md:w-1/2 space-y-4 text-left"
+            >
+              <motion.h3
+                className="text-3xl ml-6 sm:text-4xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-400"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0, transition: { duration: 0.7, delay: 0.1 * index } }}
+              >
                 {project.title}
-              </h3>
-              <p className="ml-8 text-gray-300 text-base leading-relaxed">
+              </motion.h3>
+              <motion.p
+                className="ml-8 text-gray-300 text-base leading-relaxed"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0, transition: { duration: 0.7, delay: 0.15 * index } }}
+              >
                 {project.description}
-              </p>
+              </motion.p>
 
-              <div className="ml-15 flex flex-wrap gap-2">
+              <motion.div
+                className="ml-15 flex flex-wrap gap-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 0.6, delay: 0.2 * index } }}
+              >
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
@@ -80,10 +121,14 @@ export default function PortfolioGrid() {
                     {tag}
                   </span>
                 ))}
-              </div>
+              </motion.div>
 
               {/* Botones de acción */}
-              <div className=" mt-6 flex flex-col sm:flex-row gap-4 items-center">
+              <motion.div
+                className="mt-6 flex flex-col sm:flex-row gap-4 items-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.25 * index } }}
+              >
                 <Link
                   href={`/projects/${project.slug}`}
                   aria-label={`Ver más detalles del proyecto ${project.title}`}
@@ -98,11 +143,11 @@ export default function PortfolioGrid() {
                     <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                   </svg>
                 </Link>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </motion.section>
   );
 }
