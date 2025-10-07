@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import AboutSection from "@/components/About";
 import ContactSection from "@/components/ContactCTA";
-import Footer from "@/components/footer";
+// import Footer from "@/components/footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Particles from "@/components/Particles";
