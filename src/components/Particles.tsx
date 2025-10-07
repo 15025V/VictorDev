@@ -6,7 +6,7 @@ import { SiNextdotjs, SiTailwindcss, SiVercel,  SiAngular, SiDocker, SiCss3, SiH
 
 const technologies = [
   { name: 'React', icon:SiReact, color: 'text-cyan-400' },
-  { name: 'React Native ', icon: SiReact , color: 'text-black' },
+  // { name: 'React Native ', icon: SiReact , color: 'text-cyan-400' },
   { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
   { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-blue-400' },
   { name: 'Node.js', icon: FaNodeJs, color: 'text-green-500' },

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import AboutSection from "@/components/About";
 import ContactSection from "@/components/ContactCTA";
-// import Footer from "@/components/footer";
+import Footer from "@/components/footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Particles from "@/components/Particles";
@@ -63,7 +63,7 @@ export default function Home() {
         whileInView={{ opacity: 1, rotate: 0, transition: { duration: 0.8 } }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        {/* <Footer /> */}
+        <Footer />
       </motion.div>
     </div>
   );
