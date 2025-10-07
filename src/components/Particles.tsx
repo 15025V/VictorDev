@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
+import { FaNodeJs, FaGitAlt } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiVercel,  SiAngular, SiDocker, SiCss3, SiHtml5, SiGithub, SiAstro, SiJavascript, SiExpo, SiRelianceindustrieslimited, SiReactbootstrap, SiReact } from 'react-icons/si';
 
 const technologies = [
