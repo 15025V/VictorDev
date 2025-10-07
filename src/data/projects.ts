@@ -16,18 +16,21 @@ export const projects = [
       "/images/h1.jpeg"
     ],
   },
-  // {
-  //   title: "Candy Postres",
-  //   slug: "candy-postres",
-  //   description:
-  //     "Sitio corporativo para Candy Postres, marca dedicada a la elaboración y venta de postres artesanales. El diseño destaca productos, ubicaciones y contacto. Construido con Next.js y Tailwind.",
-  //   tags: ["Next.js", "React", "Tailwind CSS"],
-  //   link: "https://www.candypostres.com.mx/",
-  //   image: "/images/default.png", // Si aún no tienes la imagen, usa /images/default.png
-  //   mockups: [ 
-  //     "/images/default.png"
-  //   ],
-  // },
+  {
+    title: "Dental Health",
+    slug: "dental-health",
+    description:
+      "Aplicación desarrollada con React Native y Expo, orientada a clínicas dentales que necesitan una solución móvil para administrar pacientes, citas y tratamientos. La app ofrece una interfaz intuitiva y responsiva, con navegación entre pantallas mediante React Navigation, y manejo de estado con Context API. Está pensada para escalar con facilidad e integrarse con servicios externos como bases de datos, autenticación y pagos.",
+    tags: ["React Native", "Expo", "Rect Navigation"],
+    link: "https://github.com/15025V/ReactAppDental/",
+    image: "/images/Ellipse 44.svg", // Si aún no tienes la imagen, usa /images/default.png
+    mockups: [ 
+      "/images/DH1.jpeg",
+      "/images/DH2.jpeg",
+      "/images/DH4.jpeg",
+      "/images/DH5.jpeg",
+    ],
+  },
   // {
   //   title: "Portfolio Victor",
   //   slug: "portfolio-victor-flores",

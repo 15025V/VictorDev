@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiVercel,  SiAngular, SiDocker, SiCss3, SiHtml5, SiGithub, SiAstro, SiJavascript } from 'react-icons/si';
+import { SiNextdotjs, SiTailwindcss, SiVercel,  SiAngular, SiDocker, SiCss3, SiHtml5, SiGithub, SiAstro, SiJavascript, SiExpo, SiRelianceindustrieslimited, SiReactbootstrap, SiReact } from 'react-icons/si';
 
 const technologies = [
-  { name: 'React', icon: FaReact, color: 'text-cyan-400' },
+  { name: 'React', icon:SiReact, color: 'text-cyan-400' },
+  { name: 'React Native ', icon: SiReact , color: 'text-black' },
   { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
   { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-blue-400' },
   { name: 'Node.js', icon: FaNodeJs, color: 'text-green-500' },
@@ -18,6 +19,7 @@ const technologies = [
   { name: 'GitHub ', icon: SiGithub, color: 'text-white' },
   { name: 'Astro ', icon: SiAstro, color: 'text-white' },
   { name: 'JavaScript ', icon: SiJavascript, color: 'text-yellow-300' },
+  { name: 'Expo ', icon: SiExpo, color: 'text-black' },
 ];
 
 export default function Particles() {

@@ -74,11 +74,12 @@ export default function PortfolioGrid() {
               viewport={{ once: true, amount: 0.3 }}
               className="group relative w-full md:w-1/2 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500"
             >
-              <div className="relative w-full h-110 sm:h-96 md:h-[48rem]">
+              <div className="relative  h- sm:h-96 md:h-[48rem]">
                 <Image
                   src={`${basePath}${project.image}`}
                   alt={`Imagen del proyecto ${project.title}`}
-                  fill
+                  width={800}
+                  height={900}
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   priority={index < 2}
                 />
