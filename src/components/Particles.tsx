@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FaNodeJs, FaGitAlt } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiVercel,  SiAngular, SiDocker, SiCss3, SiHtml5, SiGithub, SiAstro, SiJavascript, SiExpo, SiRelianceindustrieslimited, SiReactbootstrap, SiReact } from 'react-icons/si';
+import { SiNextdotjs, SiTailwindcss, SiVercel,  SiAngular, SiDocker, SiCss3, SiHtml5, SiGithub, SiAstro, SiJavascript, SiExpo, SiReact } from 'react-icons/si';
 
 const technologies = [
   { name: 'React', icon:SiReact, color: 'text-cyan-400' },
