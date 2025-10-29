@@ -72,19 +72,19 @@ export default function PortfolioGrid() {
               whileInView="show"
               whileHover="hover"
               viewport={{ once: true, amount: 0.3 }}
-              className="group relative w-full md:w-1/2 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500"
+              className="group relative w-full md:w-1/2 rounded-3xl overflow-hidden shadow-2xl "
             >
-              <div className="relative w-full  sm:h-96 md:h-[60rem]">
-                {/* h-110 */}
+              <div className=" relative sm:h-96  justify-items-center">
                 <Image
                   src={`${basePath}${project.image}`}
                   alt={`Imagen del proyecto ${project.title}`}
-                  width={800}
-                  height={600}
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  priority={index < 2}
+                  width={300}
+                  height={200}
+                  loading='lazy'
+                  className="object-contain w-full h-full   transition-transform duration-500  "
                 />
               </div>
+
             </motion.div>
 
             {/* Contenido del proyecto */}
@@ -103,7 +103,7 @@ export default function PortfolioGrid() {
                 {project.title}
               </motion.h3>
               <motion.p
-                className="ml-8 text-gray-300 text-base leading-relaxed"
+                className="ml-8 text-gray-300 text-base  !line-clamp-3 leading-relaxed"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0, transition: { duration: 0.7, delay: 0.15 * index } }}
               >
