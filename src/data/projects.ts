@@ -42,14 +42,14 @@ export const projects = [
   //   mockups: ["/images/mockups/home.jpeg"],
   // },
   
-  // {
-  //   title: "Axion Landing",
-  //   slug: "axion-landing",
-  //   description:
-  //     "Landing page para Axion Digital, empresa de tecnología enfocada en desarrollo de software personalizado. Incluye diseño modular, branding y animaciones sutiles con GSAP.",
-  //   tags: ["Next.js", "GSAP", "Tailwind CSS"],
-  //   link: "https://www.axiondigital.com/",
-  //   image: "/images/default.png",
-  //   mockups:[ "/images/default.png"],
-  // },
+  {
+     title: "CitaUp",
+    slug: "CitaUp",
+     description:
+       "En proceso....",
+     tags: ["Next.js", "GSAP", "Tailwind CSS"],
+     link: "",
+     image: "/images/default.png",
+     mockups:[ "/images/default.png"],
+   },
 ];
