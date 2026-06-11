@@ -7,7 +7,7 @@ export const projects = [
     description:
       "Flores Sons Farms es un sitio web corporativo desarrollado con Next.js y Tailwind CSS, diseñado para brindar presencia digital y credibilidad a una empresa agrícola dedicada principalmente a la exportación de cilantro. El objetivo principal del sitio es demostrar que la empresa es legítima y confiable, evitando percepciones de ser una entidad fantasma. Para lograrlo, se diseñó una interfaz profesional, limpia y adaptable, con secciones informativas como Inicio, Acerca de Nosotros, Catálogo de Productos y Contacto.  Este proyecto refleja buenas prácticas de diseño web moderno, enfoque en la experiencia del usuario, y estructura clara para generar confianza en clientes y socios potenciales.",
     tags: ["Next.js", "React", "Tailwind CSS"],
-    link:  "https://vercel.com/15025vs-projects/flores-sonsfarms/FnakoLcf1zdp36NXq19b28vybndp",
+    link:  "https://flores-sonsfarms-658jkw2xo-15025vs-projects.vercel.app/",
     image: "/images/im-1.png", // Verifica que exista en /public/images
     mockups: [
       "/images/home.jpeg",
