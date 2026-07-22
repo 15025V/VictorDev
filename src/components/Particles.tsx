@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FaNodeJs, FaGitAlt } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiVercel,  SiAngular, SiDocker, SiCss3, SiHtml5, SiGithub, SiAstro, SiJavascript, SiExpo, SiReact } from 'react-icons/si';
+import { SiNextdotjs, SiTailwindcss, SiVercel,  SiAngular, SiDocker, SiHtml5, SiGithub, SiAstro, SiJavascript, SiExpo, SiReact, SiCss} from 'react-icons/si';
 
 const technologies = [
   { name: 'React', icon:SiReact, color: 'text-cyan-400' },
@@ -14,7 +14,7 @@ const technologies = [
   { name: 'Git', icon: FaGitAlt, color: 'text-red-500' },
   { name: 'Vercel', icon: SiVercel, color: 'text-white' },
   { name: 'Angular', icon: SiAngular, color: 'text-red-500' },
-  { name: 'CSS', icon: SiCss3, color: 'text-blue-400' },
+  { name: 'CSS', icon: SiCss, color: 'text-blue-400' },
   { name: 'HTML', icon: SiHtml5, color: 'text-red-500' },
   { name: 'GitHub ', icon: SiGithub, color: 'text-white' },
   { name: 'Astro ', icon: SiAstro, color: 'text-white' },

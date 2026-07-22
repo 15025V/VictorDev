@@ -1,0 +1,5 @@
+allowBuilds:
+  react-tsparticles: true
+  sharp: true
+  tsparticles-engine: true
+  unrs-resolver: true
